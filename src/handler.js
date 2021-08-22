@@ -16,7 +16,7 @@ const addBookHandler = (request, h) => {
   if (!name) {
     const response = h
       .response({
-        status: 'failed',
+        status: 'fail',
         message: 'Gagal menambahkan buku. Mohon isi nama buku',
       })
       .code(400);
@@ -26,7 +26,7 @@ const addBookHandler = (request, h) => {
   if (readPage > pageCount) {
     const response = h
       .response({
-        status: 'failed',
+        status: 'fail',
         message:
           'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
       })
@@ -72,7 +72,7 @@ const addBookHandler = (request, h) => {
 
   const response = h
     .response({
-      status: 'failed',
+      status: 'fail',
       message: 'Buku gagal ditambahkan',
     })
     .code(500);
@@ -181,7 +181,7 @@ const getBookByIdHandler = (request, h) => {
 
   const response = h
     .response({
-      status: 'failed',
+      status: 'fail',
       message: 'Buku tidak ditemukan',
     })
     .code(404);
@@ -205,7 +205,7 @@ const editBookByIdHandler = (request, h) => {
   if (!name) {
     const response = h
       .response({
-        status: 'failed',
+        status: 'fail',
         message: 'Gagal memperbarui buku. Mohon isi nama buku',
       })
       .code(400);
@@ -215,7 +215,7 @@ const editBookByIdHandler = (request, h) => {
   if (readPage > pageCount) {
     const response = h
       .response({
-        status: 'failed',
+        status: 'fail',
         message:
           'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
       })
@@ -254,7 +254,7 @@ const editBookByIdHandler = (request, h) => {
 
   const response = h
     .response({
-      status: 'failed',
+      status: 'fail',
       message: 'Gagal memperbarui buku. Id tidak ditemukan',
     })
     .code(404);
@@ -280,7 +280,7 @@ const deleteBookByIdHandler = (request, h) => {
 
   const response = h
     .response({
-      status: 'failed',
+      status: 'fail',
       message: 'Buku gagal dihapus. Id tidak ditemukan',
     })
     .code(404);
